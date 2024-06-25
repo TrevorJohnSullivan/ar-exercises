@@ -9,4 +9,16 @@ require_relative './exercise_6'
 puts "Exercise 7"
 puts "----------"
 
-# Your code goes here ...
+# Ask the user for a store name
+puts "Please enter a store name:"
+store_name = gets.chomp
+
+# Attempt to create a store with the inputted name but leave out other fields
+store = Store.new(name: store_name)
+
+if store.save
+  puts "Store '#{store_name}' created successfully!"
+else
+  puts "Failed to create store '#{store_name}'. Errors:"
+  store.errors.full_messages.each { |message| puts "- #{message}" }
+end
