@@ -4,6 +4,7 @@ puts "Exercise 1"
 puts "----------"
 
 # Creating 3 stores
+
 Store.create(
   name: 'Burnaby',
   annual_revenue: 300000,
